@@ -2594,7 +2594,6 @@ declare namespace $ {
 
 declare namespace $ {
     class $koplenov_reactor extends $mol_book2_catalog {
-        Placeholder(): any;
         plugins(): readonly any[];
         menu_title(): string;
         menu_tools(): readonly any[];

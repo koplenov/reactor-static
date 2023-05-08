@@ -8475,9 +8475,6 @@ var $;
 var $;
 (function ($) {
     class $koplenov_reactor extends $mol_book2_catalog {
-        Placeholder() {
-            return null;
-        }
         plugins() {
             return [
                 this.Themme()
@@ -8584,7 +8581,7 @@ var $;
 "use strict";
 var $;
 (function ($) {
-    $mol_style_attach("koplenov/reactor/reactor.view.css", "[koplenov_reactor_peopleview] {\n\tflex: 1;\n}\n");
+    $mol_style_attach("koplenov/reactor/reactor.view.css", "[koplenov_reactor_peopleview] {\n\tflex: 1 0 40rem;\n}\n");
 })($ || ($ = {}));
 //koplenov/reactor/-css/reactor.view.css.ts
 ;
