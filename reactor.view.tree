@@ -1,9 +1,11 @@
 $koplenov_reactor $mol_book2_catalog
+	Placeholder null
 	plugins / <= Themme $mol_theme_auto
 	menu_title \Список чертей
 	menu_tools / <= Lighter $mol_lights_toggle
 	spreads <= peoples_view *
 	PeopleView* $mol_page
+		tools / <= Spread_close
 		title <= people_name* \
 		body /
 			<= text* $mol_textarea
