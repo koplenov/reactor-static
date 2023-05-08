@@ -508,6 +508,20 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    class $mol_after_tick extends $mol_object2 {
+        task: () => void;
+        promise: any;
+        cancelled: boolean;
+        constructor(task: () => void);
+        destructor(): void;
+    }
+}
+
+declare namespace $ {
+    function $mol_style_attach(id: string, text: string): HTMLStyleElement | null;
+}
+
+declare namespace $ {
     namespace $$ { }
     const $mol_object_field: unique symbol;
     class $mol_object extends $mol_object2 {
@@ -523,16 +537,6 @@ declare namespace $ {
             width: number;
             height: number;
         };
-    }
-}
-
-declare namespace $ {
-    class $mol_after_tick extends $mol_object2 {
-        task: () => void;
-        promise: any;
-        cancelled: boolean;
-        constructor(task: () => void);
-        destructor(): void;
     }
 }
 
@@ -622,10 +626,6 @@ declare namespace $ {
 
 declare namespace $ {
     type $mol_type_pick<Input, Upper> = Pick<Input, $mol_type_keys_extract<Input, Upper>>;
-}
-
-declare namespace $ {
-    function $mol_style_attach(id: string, text: string): HTMLStyleElement | null;
 }
 
 declare namespace $ {
@@ -2594,6 +2594,7 @@ declare namespace $ {
 
 declare namespace $ {
     class $koplenov_reactor extends $mol_book2_catalog {
+        Placeholder(): any;
         plugins(): readonly any[];
         menu_title(): string;
         menu_tools(): readonly any[];
@@ -2615,6 +2616,9 @@ declare namespace $.$$ {
         peoples_view(): any;
         people_name(people: any): any;
     }
+}
+
+declare namespace $ {
 }
 
 export = $;

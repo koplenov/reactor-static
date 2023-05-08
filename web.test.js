@@ -1581,6 +1581,15 @@ var $;
 ;
 "use strict";
 var $;
+(function ($_1) {
+    $mol_test_mocks.push($ => {
+        $.$mol_after_tick = $mol_after_mock_commmon;
+    });
+})($ || ($ = {}));
+//mol/after/tick/tick.test.ts
+;
+"use strict";
+var $;
 (function ($) {
     $mol_test({
         'init with overload'() {
@@ -1597,15 +1606,6 @@ var $;
     });
 })($ || ($ = {}));
 //mol/object/object.test.ts
-;
-"use strict";
-var $;
-(function ($_1) {
-    $mol_test_mocks.push($ => {
-        $.$mol_after_tick = $mol_after_mock_commmon;
-    });
-})($ || ($ = {}));
-//mol/after/tick/tick.test.ts
 ;
 "use strict";
 var $;
