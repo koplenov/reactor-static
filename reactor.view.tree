@@ -1,0 +1,11 @@
+$koplenov_reactor $mol_book2_catalog
+	plugins / <= Themme $mol_theme_auto
+	menu_title \Список чертей
+	menu_tools / <= Lighter $mol_lights_toggle
+	spreads <= peoples_view *
+	PeopleView* $mol_page
+		title <= people_name* \
+		body /
+			<= text* $mol_textarea
+				enabled false
+				value <= content* \loading
