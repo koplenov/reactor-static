@@ -9,7 +9,8 @@ namespace $.$$ {
 
 		@$mol_mem_key
 		content(people: any) {
-			$mol_wire_solid()
+			if (this.Enabled_cache().checked())
+				$mol_wire_solid()
 			return JSON.stringify($mol_fetch.json(`https://reactor.kinsle.ru/users/${people.id}`), undefined, 2)
 		}
 
