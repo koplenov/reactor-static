@@ -1544,6 +1544,22 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    function $mol_wire_solid() {
+        const current = $mol_wire_auto();
+        if (current.reap !== nothing) {
+            current?.sub_on(sub, sub.data.length);
+        }
+        current.reap = nothing;
+    }
+    $.$mol_wire_solid = $mol_wire_solid;
+    const nothing = () => { };
+    const sub = new $mol_wire_pub_sub;
+})($ || ($ = {}));
+//mol/wire/solid/solid.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_after_tick extends $mol_object2 {
         task;
         promise;
@@ -1787,22 +1803,6 @@ var $;
     $.$mol_wire_watch = $mol_wire_watch;
 })($ || ($ = {}));
 //mol/wire/watch/watch.ts
-;
-"use strict";
-var $;
-(function ($) {
-    function $mol_wire_solid() {
-        const current = $mol_wire_auto();
-        if (current.reap !== nothing) {
-            current?.sub_on(sub, sub.data.length);
-        }
-        current.reap = nothing;
-    }
-    $.$mol_wire_solid = $mol_wire_solid;
-    const nothing = () => { };
-    const sub = new $mol_wire_pub_sub;
-})($ || ($ = {}));
-//mol/wire/solid/solid.ts
 ;
 "use strict";
 var $;
@@ -7937,6 +7937,7 @@ var $;
                 return $mol_fetch.json("https://reactor.kinsle.ru/users");
             }
             content(people) {
+                $mol_wire_solid();
                 return JSON.stringify($mol_fetch.json(`https://reactor.kinsle.ru/users/${people.id}`), undefined, 2);
             }
             peoples_view() {

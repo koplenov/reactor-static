@@ -354,6 +354,10 @@ declare namespace $ {
 }
 
 declare namespace $ {
+    function $mol_wire_solid(): void;
+}
+
+declare namespace $ {
     class $mol_after_tick extends $mol_object2 {
         task: () => void;
         promise: any;
@@ -427,10 +431,6 @@ declare namespace $ {
 
 declare namespace $ {
     function $mol_wire_watch(): void;
-}
-
-declare namespace $ {
-    function $mol_wire_solid(): void;
 }
 
 declare namespace $ {
