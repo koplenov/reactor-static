@@ -186,6 +186,8 @@
     "$mol_maybe",
     "$mol_icon_brightness_6",
     "$mol_icon_brightness",
+    "$mol_check_box",
+    "$mol_icon_tick",
     "$mol_textarea",
     "$mol_stack",
     "$mol_text_code",

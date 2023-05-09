@@ -7433,6 +7433,41 @@ var $;
 "use strict";
 var $;
 (function ($) {
+    class $mol_icon_tick extends $mol_icon {
+        path() {
+            return "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z";
+        }
+    }
+    $.$mol_icon_tick = $mol_icon_tick;
+})($ || ($ = {}));
+//mol/icon/tick/-view.tree/tick.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    class $mol_check_box extends $mol_check {
+        Icon() {
+            const obj = new this.$.$mol_icon_tick();
+            return obj;
+        }
+    }
+    __decorate([
+        $mol_mem
+    ], $mol_check_box.prototype, "Icon", null);
+    $.$mol_check_box = $mol_check_box;
+})($ || ($ = {}));
+//mol/check/box/-view.tree/box.view.tree.ts
+;
+"use strict";
+var $;
+(function ($) {
+    $mol_style_attach("mol/check/box/box.view.css", "[mol_check_box_icon] {\n\tborder-radius: var(--mol_gap_round);\n\tbox-shadow: inset 0 0 0 1px var(--mol_theme_line);\n\tcolor: var(--mol_theme_shade);\n\theight: 1rem;\n\talign-self: center;\n}\n\n[mol_check]:not([mol_check_checked]) > [mol_check_box_icon] {\n\tfill: transparent;\n}\n\n[mol_check]:not([disabled]) > [mol_check_box_icon] {\n\tbackground: var(--mol_theme_field);\n\tcolor: var(--mol_theme_text);\n}\n");
+})($ || ($ = {}));
+//mol/check/box/-css/box.view.css.ts
+;
+"use strict";
+var $;
+(function ($) {
     class $mol_stack extends $mol_view {
     }
     $.$mol_stack = $mol_stack;
@@ -8493,7 +8528,8 @@ var $;
         }
         menu_tools() {
             return [
-                this.Lighter()
+                this.Lighter(),
+                this.Enabled_cache()
             ];
         }
         spreads() {
@@ -8516,6 +8552,11 @@ var $;
         }
         Lighter() {
             const obj = new this.$.$mol_lights_toggle();
+            return obj;
+        }
+        Enabled_cache() {
+            const obj = new this.$.$mol_check_box();
+            obj.title = () => "Кеш?";
             return obj;
         }
         peoples_view() {
@@ -8544,6 +8585,9 @@ var $;
         $mol_mem
     ], $koplenov_reactor.prototype, "Lighter", null);
     __decorate([
+        $mol_mem
+    ], $koplenov_reactor.prototype, "Enabled_cache", null);
+    __decorate([
         $mol_mem_key
     ], $koplenov_reactor.prototype, "text", null);
     $.$koplenov_reactor = $koplenov_reactor;
@@ -8560,7 +8604,8 @@ var $;
                 return $mol_fetch.json("https://reactor.kinsle.ru/users");
             }
             content(people) {
-                $mol_wire_solid();
+                if (this.Enabled_cache().checked())
+                    $mol_wire_solid();
                 return JSON.stringify($mol_fetch.json(`https://reactor.kinsle.ru/users/${people.id}`), undefined, 2);
             }
             peoples_view() {

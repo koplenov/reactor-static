@@ -332,6 +332,11 @@ $mol_lights_toggle $mol_check_icon
 	hint @ \Toggle lights
 	checked?val <=> lights?val false
 
+$mol_icon_tick $mol_icon path \M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z
+
+$mol_check_box $mol_check
+	Icon $mol_icon_tick
+
 $mol_stack $mol_view
 
 $mol_text_code_token $mol_dimmer
@@ -481,7 +486,10 @@ $mol_textarea_edit $mol_string
 $koplenov_reactor $mol_book2_catalog
 	plugins / <= Themme $mol_theme_auto
 	menu_title \Список чертей
-	menu_tools / <= Lighter $mol_lights_toggle
+	menu_tools /
+		<= Lighter $mol_lights_toggle
+		<= Enabled_cache $mol_check_box
+			title \Кеш?
 	spreads <= peoples_view *
 	PeopleView* $mol_page
 		tools / <= Spread_close

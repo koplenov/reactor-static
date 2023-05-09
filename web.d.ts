@@ -2090,6 +2090,21 @@ declare namespace $.$$ {
 }
 
 declare namespace $ {
+    class $mol_icon_tick extends $mol_icon {
+        path(): string;
+    }
+}
+
+declare namespace $ {
+    class $mol_check_box extends $mol_check {
+        Icon(): $mol_icon_tick;
+    }
+}
+
+declare namespace $ {
+}
+
+declare namespace $ {
     class $mol_stack extends $mol_view {
     }
 }
@@ -2471,6 +2486,7 @@ declare namespace $ {
         PeopleView(id: any): $mol_page;
         Themme(): $$.$mol_theme_auto;
         Lighter(): $$.$mol_lights_toggle;
+        Enabled_cache(): $mol_check_box;
         peoples_view(): {};
         people_name(id: any): string;
         content(id: any): string;
